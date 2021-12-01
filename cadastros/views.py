@@ -11,18 +11,18 @@ def lista_cidades(request):
 
     context = {
         'cidades': qs,
-        'titulo': 'city'
     }
     return render(request, 'cadastros/lista_cidades.html', context)
 
 
-def detalhe_cidade(request):
-    pass
-    id_cidade = request.get['id_cidade']
-    cidade = Cidade.objects.get(pk=id_cidade)
+def detalhe_cidade(request, id):
+
+    # id_cidade = 9
+    # cidade = Cidade.objects.get(pk=id_cidade)
+    cidade = get_object_or_404(Cidade, pk=id)
 
     context = {
-        'cidade': detalhe_cidade()
+        'cidade': cidade
     }
 
-    return render(request, 'cadastros/detalhe_cidade.html', context)
+    return render(request, 'cadastros/detalhe_cidades.html', context)

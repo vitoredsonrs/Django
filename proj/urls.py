@@ -16,8 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from cadastros.views import lista_cidades
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cidades/', include('cadastros.urls'))

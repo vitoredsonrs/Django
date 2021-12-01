@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 
 {% block conteudo %}
-
 <h1>Cidades cadastradas</h1>
     <ul class="list-group">
         {% for cidade in cidades %}
-        <li class="list-group-item{% if cidade.capital %} active {% endif %}">{{cidade.nome}}</li>
+        <a class="list-group-item{% if cidade.capital %} active {% endif %}" href="{% url 'cidades-detalhe' cidade.id%}">{{cidade.nome}}</a>
         {% endfor %}
     </ul>
 {% endblock %}
