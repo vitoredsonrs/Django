@@ -4,6 +4,8 @@
 <h1>Detalhe cidade</h1>
 <h2><a class="btn btn-primary" href="{% url 'cidades-list' %}"> Página inicial</a></h2>
     <p>Nome: {{cidade.nome}} {% if cidade.capital%}<span class="badge bg-primary">Capital</span>{%endif%}</p>
+    <p>Estado: {{cidade.estado|default_if_none:'-'}}</p>
+    <p>Pais: {{cidade.estado.pais|default_if_none:'-'}}</p>
     <div>
         {% if request.user.is_authenticated %}
     <a class="btn btn-primary" href="{% url 'edita-cidade' cidade.id%}">Atualizar registro</a>
