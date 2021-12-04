@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h1>Editar Cidade</h1>
+<h1><a class="btn btn-primary" href="{% url 'cidades-list' %}"> Página inicial</a></h1>
+    <h2>Editar Cidade</h2>
     <form method="post">{% csrf_token %}
         <p>Você deseja remover a cidade "{{cidade}}"?</p>
     <input type="submit" value="Confirmar" class="btn btn-danger">

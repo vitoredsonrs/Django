@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <h1>Nova Cidade</h1>
-    <h2><a class="btn btn-primary" href="{% url 'cidades-list' %}"> Página inicial</a></h2>
+ <h1><a class="btn btn-primary" href="{% url 'cidades-list' %}"> Página inicial</a></h1>
+    <h2>Nova Cidade</h2>
     <form action= "{% url 'cadastra-cidade'%}" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
