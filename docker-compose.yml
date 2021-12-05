@@ -9,6 +9,9 @@ services:
     entrypoint: ['sh', 'run-django.sh']
     depends_on:
       - personal_db
+    networks:
+      - database
+      - web
 
   proxy:
     image: nginx
@@ -21,6 +24,8 @@ services:
       - ./static:/var/www/static
     depends_on:
       - app
+    networks:
+      - web
 
   pessoal_db:
     image: mdillon/postgis
@@ -29,6 +34,11 @@ services:
       POSTGRES_DB: pessoal
     volumes:
       - postgres-data-prod:/var/lib/postgresql/data
+    networks:
+      - database
 volumes:
   postgres-data-prod:
 
+networks:
+  web:
+  database:
