@@ -36,8 +36,18 @@ services:
       - postgres-data-prod:/var/lib/postgresql/data
     networks:
       - database
+
+  portainer:
+    image: portainer/portainer
+    ports:
+      - "9000:9000"
+    command: -H unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer-data:/data
 volumes:
   postgres-data-prod:
+  portainer-data:
 
 networks:
   web:
