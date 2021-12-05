@@ -1,5 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.urls import path
+
+from cadastros.apis import CidadeAPIList
 from cadastros.views import CidadeList, CidadeDetail, CidadeDelete, CidadeCreate, CidadeUpdate
 
 urlpatterns = [
@@ -8,4 +10,6 @@ urlpatterns = [
     path('delete/<int:pk>/', login_required(CidadeDelete.as_view()), name='cidade-remove'),
     path('create', login_required(CidadeCreate.as_view()), name='cadastra-cidade'),
     path('update/<int:pk>/', login_required(CidadeUpdate.as_view()), name='edita-cidade'),
+    path('api/cidades', CidadeAPIList.as_view(), name='cidades-api'),
+
 ]
