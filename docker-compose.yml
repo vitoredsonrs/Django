@@ -1,0 +1,28 @@
+version: '3.5'
+
+services:
+
+  app:
+    build: .
+    ports:
+      - "8001:8000"
+    volumes:
+      - .:/code
+    entrypoint: ['sh', 'run-django.sh']
+
+  pessoal_db:
+    image: mdillon/postgis
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: pessoal
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-data-prod:/var/lib/postgresql/data
+  adminer:
+    image: adminer
+    ports:
+      - 8081:8080
+
+volumes:
+  postgres-data-prod:
