@@ -7,7 +7,7 @@ INTERNAL_IPS = ('127.0.0.1', 'localhost',)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pessoal',
+        'NAME': 'local',
         'USER': 'postgres',
         'PASSWORD': 'root',
         'HOST': '127.0.0.1',
