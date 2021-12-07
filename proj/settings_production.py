@@ -1,3 +1,5 @@
+from django.conf.global_settings import EMAIL_USE_TLS
+
 from .settings import *
 
 DEBUG = False

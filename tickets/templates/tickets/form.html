@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block conteudo %}
+
+<h1><a class="btn btn-primary" href="{% url 'cidades-list' %}"> Página inicial</a></h1>
+    <h2>Nova solicitação</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy}}
+        <input type="submit" value="Enviar" class="btn btn-primary" >
+    </form>
+{% endblock %}

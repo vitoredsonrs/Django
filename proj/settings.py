@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'cadastros',
+    'tickets',
+    'crispy_forms'
 ]
 
 
@@ -116,9 +118,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -138,6 +140,11 @@ STATICFILES_DIRS = [
 
 ]
 
+MEDIA_ROOT = 'media'
+MEDIA_URL = 'files/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -147,9 +154,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     import __dev__
 #     from .settings_dev import *
 # except ImportError:
-#     try:
-#         import __production__
-#         from .settings_production import *
-#     except:
-#         pass
-#
+#     pass# try:
+#     #     import __production__
+#     #     from .settings_production import *
+#     # except:
+#     #     pass
